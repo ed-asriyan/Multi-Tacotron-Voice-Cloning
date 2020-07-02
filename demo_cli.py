@@ -49,17 +49,17 @@ if __name__ == '__main__':
               "for deep learning, ensure that the drivers are properly installed, and that your "
               "CUDA version matches your PyTorch installation. CPU-only inference is currently "
               "not supported.", file=sys.stderr)
-        quit(-1)
-    device_id = torch.cuda.current_device()
-    gpu_properties = torch.cuda.get_device_properties(device_id)
-    print("Found %d GPUs available. Using GPU %d (%s) of compute capability %d.%d with "
-          "%.1fGb total memory.\n" % 
-          (torch.cuda.device_count(),
-           device_id,
-           gpu_properties.name,
-           gpu_properties.major,
-           gpu_properties.minor,
-           gpu_properties.total_memory / 1e9))
+        #quit(-1)
+    #device_id = torch.cuda.current_device()
+    #gpu_properties = torch.cuda.get_device_properties(device_id)
+    #print("Found %d GPUs available. Using GPU %d (%s) of compute capability %d.%d with "
+    #      "%.1fGb total memory.\n" % 
+    #      (torch.cuda.device_count(),
+    #       device_id,
+    #       gpu_properties.name,
+    #       gpu_properties.major,
+    #       gpu_properties.minor,
+    #       gpu_properties.total_memory / 1e9))
     
     
     ## Load the models one by one.
@@ -185,5 +185,3 @@ if __name__ == '__main__':
                              synthesizer.sample_rate)
     num_generated += 1
     print("\nSaved output as %s\n\n" % fpath)
-    
-    
